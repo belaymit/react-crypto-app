@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import URL from '../../common/constant';
 
 const initialState = {
   coins: [],
   error: null,
+  selectedCoins: [],
   isLoading: false,
 };
 
 export const getCoins = createAsyncThunk('coins/getCoins', async () => {
-  const resp = await fetch('https://api.coinstats.app/public/v1/coins');
+  const resp = await fetch(URL);
   const data = await resp.json();
   return data.coins;
 });
@@ -15,7 +17,12 @@ export const getCoins = createAsyncThunk('coins/getCoins', async () => {
 const coinSlice = createSlice({
   name: 'coin',
   initialState,
-  reducers: {},
+  reducers: {
+    removeSelectedCoin: (state) => ({
+      ...state,
+      selectedCoins: [],
+    }),
+  },
   extraReducers: (builder) => {
     builder.addCase(getCoins.pending, (state) => ({
       ...state,
