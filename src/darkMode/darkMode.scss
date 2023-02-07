@@ -62,10 +62,13 @@
       }
     }
   }
-
-  .details-container {
-    .card-detail {
-      background-color: #222;
+  .details-section {
+    background-color: rgba(20, 20, 20, 0.918);
+    .details-container {
+      .card-detail {
+        background-color: rgb(37, 37, 37);
+        margin-bottom: 2rem;
+      }
     }
   }
 

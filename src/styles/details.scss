@@ -1,7 +1,6 @@
 @import '../common/common-css-rules.scss';
 
 .details-container {
-  margin-top: 8rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -11,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0.5rem 1rem;
-    margin: 0 4rem 1.2rem;
+    margin: 8rem 4rem 1.2rem;
 
     h2 {
       color: $orange-color;
