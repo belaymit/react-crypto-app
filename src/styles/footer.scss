@@ -1,46 +1,60 @@
 @import '../common/common-css-rules.scss';
 
-.footer-container {
-  border-top: 1px solid rgb(221, 217, 217);
-  color: $black-color;
-  padding-top: 2em;
-  position: relative;
-  bottom: 0;
+footer {
+  .footer-container {
+    border-top: 1px solid rgb(221, 217, 217);
+    color: $black-color;
+    padding-top: 2em;
+    position: relative;
+    bottom: 0;
 
-  .footer {
-    margin: 0 4rem;
-    .row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-  
-      .col {
-        list-style: none;
-  
-        h4 {
-          color: $orange-color;
-          margin-bottom: 0.5rem;
-          font-weight: $font-normal;
-        }
-        .list-unstyled {
-          padding: 0.25rem;
-          font-size: 1.2rem;
-  
-          li {
-            margin-top: 0.25rem;
-            font-size: 1rem;
+    .footer {
+      margin: 0 4rem;
+
+      .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .col {
+          list-style: none;
+
+          h4 {
+            color: $orange-color;
+            margin-bottom: 0;
+            font-weight: $font-normal;
+          }
+
+          .list-unstyled {
+            padding: 0.25rem;
+            font-size: 1.2rem;
+
+            li {
+              margin-top: 0;
+              font-size: 1rem;
+              padding: 0.5rem;
+            }
           }
         }
+
+        @include sm {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 2rem;
+          column-gap: 1rem;
+        }
       }
+
       @include sm {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 2rem;
-        column-gap: 1rem;
+        margin: 0;
       }
     }
-  }
 
-  .row-sm {
-    text-align: center;
-    margin-bottom: 1rem;
+    .row-sm {
+      border-top: 1px solid rgb(187, 184, 184);
+      text-align: center;
+
+      .col-sm {
+        padding: 0.5rem 0 2rem 0;
+      }
+    }
   }
 }
