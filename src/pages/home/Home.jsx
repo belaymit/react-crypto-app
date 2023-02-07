@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ClipLoader } from 'react-spinners';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Navbar from '../../components/navbar/Navbar';
 import Card from '../../components/UI/Card';
@@ -16,7 +17,6 @@ const Home = () => {
   };
   const dispatch = useDispatch();
   const coins = useSelector(allCoins);
-  // const loading = useSelector(isLoading);
   const isError = useSelector(error);
 
   useEffect(() => {
@@ -34,8 +34,14 @@ const Home = () => {
               || coin.symbol.toLowerCase().includes(search.toLowerCase()),
       ) || coin.rank.toString().includes(search.toString()),
   ) : [];
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
 
-  // const { mode } = useSelector((state) => state.darkMode);
   return (
     <main>
       <div className="home-container container">
@@ -72,18 +78,24 @@ const Home = () => {
             />
             <AiOutlineSearch className="search-icon" />
           </div>
-          <h2 className="crypto-container-title">Top 100 Cryptocurrencies</h2>
-          <div className="loading-status">
+          <div className="spinner">
             {isError && <h1>{isError}</h1>}
           </div>
-          <div className="card-container">
-            {filteredCoins.map((coin) => (
-              <Card
-                key={coin.id}
-                coin={coin}
-              />
-            ))}
-          </div>
+          {loading
+            ? <ClipLoader color="#d0021b" loading={loading} size={150} />
+            : (
+              <>
+                <h2 className="crypto-container-title">Top 100 Cryptocurrencies</h2>
+                <div className="card-container">
+                  {filteredCoins.map((coin) => (
+                    <Card
+                      key={coin.id}
+                      coin={coin}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
         </div>
       </div>
     </main>
