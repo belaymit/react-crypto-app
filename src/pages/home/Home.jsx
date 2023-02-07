@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { AiOutlineSearch } from 'react-icons/ai';
 import Navbar from '../../components/navbar/Navbar';
-// import { Spinner } from 'loading-animations-react';
-import { cryptoDisplay } from '../../assets/file';
 import Card from '../../components/UI/Card';
 import {
   allCoins, error, getCoins,
@@ -10,7 +9,6 @@ import {
 import '../../styles/home.scss';
 
 let flag = false;
-
 const Home = () => {
   const [search, setSearch] = useState('');
   const handleSearch = (e) => {
@@ -37,46 +35,55 @@ const Home = () => {
       ) || coin.rank.toString().includes(search.toString()),
   ) : [];
 
+  // const { mode } = useSelector((state) => state.darkMode);
   return (
-    <main className="home-container container">
-      <Navbar title="Crypto Statistics" handleSearch={handleSearch} search={search} />
-      <div className="home-wrapper">
-        <h1 className="title">Cryptocurrency Statistics</h1>
-        <div className="crypto-desc">
-          <div className="crypto-data-img">
-            <img src={cryptoDisplay} alt="logo" />
-          </div>
-          <div className="crypto-data-card">
-            <h2 className="crypto-data-card-title">Market Cap</h2>
-            <p>
-              {coins[0]?.marketCap}
-              {' '}
-              B
-            </p>
-          </div>
-          <div className="crypto-data-card">
-            <h2 className="crypto-data-card-title">24h Volume</h2>
-            <p>
-              {coins[0]?.volume}
-              {' '}
-              B
-            </p>
+    <main>
+      <div className="home-container container">
+        <Navbar title="Crypto Statistics" handleSearch={handleSearch} search={search} />
+        <div className="home-wrapper">
+          <h1 className="title">Cryptocurrency Statistics</h1>
+          <div className="crypto-desc">
+            <div className="crypto-data-card">
+              <h2 className="crypto-data-card-title">Market Cap</h2>
+              <p>
+                {coins[0]?.marketCap}
+                {' '}
+                B
+              </p>
+            </div>
+            <div className="crypto-data-card">
+              <h2 className="crypto-data-card-title">24h Volume</h2>
+              <p>
+                {coins[0]?.volume}
+                {' '}
+                B
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="crypto-container">
-        <h2 className="crypto-container-title">Top 100 Cryptocurrencies</h2>
-        <div className="loading-status">
-          {/* {loading && <Spinner />} */}
-          {isError && <h1>{isError}</h1>}
-        </div>
-        <div className="card-container">
-          {filteredCoins.map((coin) => (
-            <Card
-              key={coin.id}
-              coin={coin}
+        <div className="crypto-container">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search by name, symbol or rank"
+              className="search"
+              onChange={handleSearch}
+              value={search}
             />
-          ))}
+            <AiOutlineSearch className="search-icon" />
+          </div>
+          <h2 className="crypto-container-title">Top 100 Cryptocurrencies</h2>
+          <div className="loading-status">
+            {isError && <h1>{isError}</h1>}
+          </div>
+          <div className="card-container">
+            {filteredCoins.map((coin) => (
+              <Card
+                key={coin.id}
+                coin={coin}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </main>
