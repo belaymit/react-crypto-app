@@ -4,7 +4,6 @@ import URL from '../../common/constant';
 const initialState = {
   coins: [],
   error: null,
-  selectedCoins: [],
   isLoading: false,
 };
 
@@ -18,10 +17,6 @@ const coinSlice = createSlice({
   name: 'coin',
   initialState,
   reducers: {
-    removeSelectedCoin: (state) => ({
-      ...state,
-      selectedCoins: [],
-    }),
   },
   extraReducers: (builder) => {
     builder.addCase(getCoins.pending, (state) => ({
