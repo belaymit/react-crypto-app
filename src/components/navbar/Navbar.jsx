@@ -19,7 +19,7 @@ const Navbar = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" data-testid="test-navbar">
       <div className="navbar-container container">
         <div className="nav-logo">
           <NavLink className="nav-link" to="/">
