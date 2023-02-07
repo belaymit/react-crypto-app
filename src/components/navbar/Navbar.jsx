@@ -7,7 +7,7 @@ import { MdOutlineLightMode } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toggleDarkMode } from '../../redux/darkMode/darkModeSlice';
-import { logo } from '../../assets/file';
+import logo from '../../assets/file';
 import '../../styles/navbar.scss';
 
 const Navbar = (props) => {
