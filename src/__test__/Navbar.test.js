@@ -31,15 +31,4 @@ describe('Test for Navbar component', () => {
     );
     expect(navbar.getByText('Crypto Statistics')).toBeInTheDocument();
   });
-
-  it('renders Navbar with expected text', () => {
-    const navbar = render(
-      <BrowserRouter>
-        <Provider store={store}>
-          <Navbar title="Crypto Details" />
-        </Provider>
-      </BrowserRouter>,
-    );
-    expect(navbar.getByText('Crypto Details')).toBeInTheDocument();
-  });
 });
