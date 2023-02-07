@@ -19,7 +19,7 @@ const Card = ({ coin }) => (
         </div>
         <div className="card-body">
           <div className="card-body-item">
-            <p>
+            <p className="items">
               Symbol
             </p>
             <p>
@@ -27,7 +27,7 @@ const Card = ({ coin }) => (
             </p>
           </div>
           <div className="card-body-item">
-            <p>
+            <p className="items">
               Price
             </p>
             <p>
@@ -36,7 +36,7 @@ const Card = ({ coin }) => (
             </p>
           </div>
           <div className="card-body-item">
-            <p>
+            <p className="items">
               Daily Change
             </p>
             <div className="daily-change-container">
