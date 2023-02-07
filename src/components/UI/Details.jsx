@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { MdArrowBackIosNew } from 'react-icons/md';
 import Navbar from '../navbar/Navbar';
 import '../../styles/details.scss';
 
@@ -12,7 +11,7 @@ const Details = () => {
 
   return (
     <section className="details-section">
-      <Navbar title={<MdArrowBackIosNew />} />
+      <Navbar title="Crypto Details" />
       <div className="details-container container">
         <div className="details-header">
           <img src={coin.icon} alt="coin" />
