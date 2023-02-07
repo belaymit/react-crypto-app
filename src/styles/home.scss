@@ -22,9 +22,9 @@
     }
 
     .crypto-desc {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       padding: 0 3rem;
 
       .crypto-data {
@@ -34,14 +34,12 @@
       }
 
       .crypto-data-card {
-        background: $container-color;
         display: flex;
         padding: 1rem 0 0 1rem;
         flex-direction: column;
         width: 15rem;
         gap: 0.25rem;
         height: 10rem;
-        border: 0.3px solid rgb(238, 235, 235);
         border-radius: 0.25rem;
 
         .crypto-data-card-title {
