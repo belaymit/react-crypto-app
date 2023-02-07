@@ -53,15 +53,15 @@
         .search-container {
           background-color: transparent;
 
+          input {
+            color: #fff;
+          }
+
           input,
           .search-icon {
             background-color: transparent;
             border: 1px solid rgb(88, 86, 86);
           }
-        }
-
-        input {
-          color: #fff;
         }
       }
     }
