@@ -1,0 +1,107 @@
+@import '../common/common-css-rules.scss';
+
+.app.dark {
+  color: rgb(156, 156, 156);
+
+  .nav-bar {
+    background: #222;
+    box-shadow: 0 2px 4px 0 rgba(189, 184, 184, 0.1);
+  }
+
+  main {
+    background-color: rgba(20, 20, 20, 0.918);
+
+    .home-container {
+      .home-wrapper {
+        .crypto-desc {
+          .crypto-data-img {
+            background-color: rgba(100, 98, 87, 0.103);
+            border-color: transparent;
+            overflow: hidden;
+
+            img {
+              border-radius: 50%;
+              width: 70%;
+              height: 100%;
+            }
+          }
+
+          .crypto-data-card {
+            background-color: transparent;
+            border-color: transparent;
+          }
+        }
+      }
+
+      .crypto-container {
+        .card-container {
+          .crypto-card {
+            background: rgba(100, 98, 87, 0.103);
+            box-shadow: 0 3px 5px 0 rgba(218, 217, 213, 0.596);
+
+            .crypto-wrapper {
+              .card-body {
+                .card-body-item {
+                  background-color: #222;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        .search-container {
+          background-color: transparent;
+
+          input {
+            color: #fff;
+          }
+
+          input,
+          .search-icon {
+            background-color: transparent;
+            border: 1px solid rgb(88, 86, 86);
+          }
+        }
+      }
+    }
+  }
+
+  .details-section {
+    background-color: rgba(20, 20, 20, 0.918);
+
+    .details-container {
+      .card-detail {
+        background-color: rgb(37, 37, 37);
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  footer {
+    background-color: #222;
+
+    .footer-container {
+      border-top: 1px solid rgb(70, 68, 68);
+
+      .footer {
+        .row {
+          .col {
+            .list-unstyled {
+              li {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      .row-sm {
+        background-color: #222;
+        color: #fff;
+        padding: 1rem 0;
+        border-top: 1px solid rgb(70, 68, 68);
+      }
+    }
+  }
+}
