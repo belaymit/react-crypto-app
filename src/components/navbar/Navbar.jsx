@@ -3,7 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { BsCurrencyBitcoin } from 'react-icons/bs';
 import { FiSettings } from 'react-icons/fi';
 import { FaSearchDollar } from 'react-icons/fa';
+import { MdOutlineLightMode } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { toggleDarkMode } from '../../redux/darkMode/darkModeSlice';
 import { logo } from '../../assets/file';
 import '../../styles/navbar.scss';
 
@@ -13,6 +16,7 @@ const Navbar = (props) => {
   const handleClick = () => {
     setToggleNav((prev) => !prev);
   };
+  const dispatch = useDispatch();
 
   return (
     <nav className="nav-bar">
@@ -28,6 +32,7 @@ const Navbar = (props) => {
         <div className="nav-icons-list">
           <BsCurrencyBitcoin className="icon" />
           <FiSettings className="icon" />
+          <MdOutlineLightMode className="icon" onClick={() => dispatch(toggleDarkMode())} />
           <FaSearchDollar className="icon" onClick={() => handleClick()} role="presentation" />
         </div>
         <div className={toggleNav ? 'searchBox' : 'searchBox hide-search'}>
