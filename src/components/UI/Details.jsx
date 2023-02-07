@@ -11,7 +11,7 @@ const Details = () => {
   const coin = coins.find((coin) => coin.id === id);
 
   return (
-    <section>
+    <section className="details-section">
       <Navbar title={<MdArrowBackIosNew />} />
       <div className="details-container container">
         <div className="details-header">
