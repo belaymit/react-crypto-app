@@ -68,7 +68,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://crypto-app-v1-0--luxury-marzipan-b277f4.netlify.app/)
+- [Live Demo Link](https://belaymit.github.io/react-crypto-app/)
 - [here](https://www.loom.com/share/13f28606346344569bf710c4e4e254ec) is a video description
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
